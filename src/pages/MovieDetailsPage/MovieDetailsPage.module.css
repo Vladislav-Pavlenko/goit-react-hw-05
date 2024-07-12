@@ -1,0 +1,52 @@
+.go_back_btn {
+  padding: 5px 10px;
+  border: 1px solid white;
+  border-radius: 30px;
+  margin-left: 60px;
+  color: orange;
+  transition: 250ms ease-in-out;
+}
+
+.go_back_btn:hover {
+  color: white;
+  background-color: orange;
+}
+
+.details {
+  display: flex;
+  padding: 20px 60px;
+  gap: 20px;
+  border-bottom: 1px solid white;
+}
+
+.img {
+  width: 300px;
+}
+
+.info_container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+}
+
+.aditional_info {
+  padding: 20px 60px;
+}
+
+.aditional_title {
+  margin-bottom: 20px;
+}
+
+.aditional_list {
+  width: 100%;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.aditional_link {
+  font-size: 20px;
+  color: orange;
+}

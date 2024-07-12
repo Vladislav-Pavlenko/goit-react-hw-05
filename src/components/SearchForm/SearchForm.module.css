@@ -1,0 +1,22 @@
+.form {
+  display: flex;
+  gap: 10px;
+}
+.input {
+  padding: 5px 10px;
+  border: 1px solid white;
+  border-radius: 15px;
+  background-color: transparent;
+}
+.btn {
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 10px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 250ms ease-in-out;
+}
+
+.btn:hover {
+  background-color: orange;
+}
