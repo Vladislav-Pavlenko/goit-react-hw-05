@@ -11,13 +11,13 @@ export default function MovieCast() {
   const [credits, setCredits] = useState([]);
   const [loader, setLoader] = useState(false);
   const [error, setError] = useState(false);
-  const filmId = useParams();
+  const { movieId } = useParams();
   useEffect(() => {
     async function getActor() {
       try {
         setLoader(true);
         setError(false);
-        const promise = await fetchCreditsByNavigationId(filmId);
+        const promise = await fetchCreditsByNavigationId(movieId);
         setCredits(promise.cast.slice(0, 3));
       } catch {
         setError(true);
@@ -26,7 +26,7 @@ export default function MovieCast() {
       }
     }
     getActor();
-  }, [filmId]);
+  }, [movieId]);
   return (
     <>
       <Suspense fallback={<div>Loading page code...</div>}>

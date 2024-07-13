@@ -11,13 +11,13 @@ export default function MovieReviews() {
   const [credits, setCredits] = useState([]);
   const [loader, setLoader] = useState(false);
   const [error, setError] = useState(false);
-  const filmId = useParams();
+  const { movieId } = useParams();
   useEffect(() => {
     async function getReviews() {
       try {
         setLoader(true);
         setError(false);
-        const promise = await fetchReviewsByNavigationId(filmId);
+        const promise = await fetchReviewsByNavigationId(movieId);
         setCredits(promise.results.slice(0, 3));
       } catch {
         setError(true);
@@ -26,7 +26,7 @@ export default function MovieReviews() {
       }
     }
     getReviews();
-  }, [filmId]);
+  }, [movieId]);
 
   const truncateString = (str, num) => {
     if (str.length <= num) {

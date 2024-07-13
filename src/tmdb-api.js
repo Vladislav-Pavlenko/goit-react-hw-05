@@ -12,19 +12,19 @@ export async function fetchFilms() {
   return result.data;
 }
 
-export async function fetchFilmsByNavigationId({ movieId }) {
+export async function fetchFilmsByNavigationId(movieId) {
   const result = await axios.get(`3/movie/${movieId}?language=en-US`, options);
   return result.data;
 }
 
-export async function fetchCreditsByNavigationId({ movieId }) {
+export async function fetchCreditsByNavigationId(movieId) {
   const result = await axios.get(
     `3/movie/${movieId}/credits?language=en-US`,
     options
   );
   return result.data;
 }
-export async function fetchReviewsByNavigationId({ movieId }) {
+export async function fetchReviewsByNavigationId(movieId) {
   const result = await axios.get(
     `3/movie/${movieId}/reviews?language=en-US&page=1`,
     options

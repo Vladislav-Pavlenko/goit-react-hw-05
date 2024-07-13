@@ -12,7 +12,7 @@ export default function MovieDetailsPage() {
   const [loader, setLoader] = useState(false);
   const [error, setError] = useState(false);
   const [genres, setGenres] = useState("");
-  const filmId = useParams();
+  const { movieId } = useParams();
   const location = useLocation();
   const backLinkRef = useRef(location.state ?? "/");
 
@@ -21,7 +21,7 @@ export default function MovieDetailsPage() {
       try {
         setLoader(true);
         setError(false);
-        const promise = await fetchFilmsByNavigationId(filmId);
+        const promise = await fetchFilmsByNavigationId(movieId);
         setFilm(promise);
         setGenres(
           promise.genres.map((item) => {
@@ -35,7 +35,7 @@ export default function MovieDetailsPage() {
       }
     }
     getImages();
-  }, [filmId]);
+  }, [movieId]);
 
   return (
     <main>
